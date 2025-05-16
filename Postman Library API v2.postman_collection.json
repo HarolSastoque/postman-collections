@@ -1,0 +1,139 @@
+{
+	"info": {
+		"_postman_id": "02bae40c-4750-4611-b8cc-4c8b9ed2ff96",
+		"name": "Postman Library API v2",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "44573076",
+		"_collection_link": "https://harol-9882969.postman.co/workspace/Experto-en-estudiantes-de-funda~9c7f323e-4b58-4d76-a5fb-3e075e7cf36a/collection/44573076-02bae40c-4750-4611-b8cc-4c8b9ed2ff96?action=share&source=collection_link&creator=44573076"
+	},
+	"item": [
+		{
+			"name": "get books",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl }}books",
+					"host": [
+						"{{baseUrl }}books"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get fiction books",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl }}books?genre=fiction&checkedOut=false",
+					"host": [
+						"{{baseUrl }}books"
+					],
+					"query": [
+						{
+							"key": "genre",
+							"value": "fiction"
+						},
+						{
+							"key": "checkedOut",
+							"value": "false"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get books by id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl }}books/:id",
+					"host": [
+						"{{baseUrl }}books"
+					],
+					"path": [
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "57af4209-b0d3-48d1-892d-3a555ac9189e"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "add a book",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"title\": \"Mil lunas y una noche\",\r\n  \"author\": \"Harol Chaikosky\",\r\n  \"genre\": \"Realistic\",\r\n  \"yearPublished\": 2024\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl }}books",
+					"host": [
+						"{{baseUrl }}books"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"auth": {
+		"type": "apikey",
+		"apikey": [
+			{
+				"key": "value",
+				"value": "postmanrulz",
+				"type": "string"
+			},
+			{
+				"key": "key",
+				"value": "api-key",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "baseUrl ",
+			"value": "https://library-api.postmanlabs.com/",
+			"type": "default"
+		}
+	]
+}
